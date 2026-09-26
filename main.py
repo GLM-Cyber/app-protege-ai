@@ -19,12 +19,23 @@ def main(page: ft.Page):
         "usuario": ""
     }
 
-    # --- BANCO DE DADOS: 4 MÓDULOS COM 3 FASES ---
+    # --- BANCO DE DADOS APROFUNDADO ---
     modulos = [
         {
             "id": 1, "nome": "Módulo 1: Phishing", "icone": ft.icons.PHISHING,
-            "teoria_titulo": "A Engenharia Social",
-            "teoria_desc": "O Phishing usa gatilhos mentais (urgência, medo, curiosidade) para enganar você. Golpes começam genéricos e ficam mais sofisticados, mirando até sua profissão.",
+            "teoria_titulo": "A Anatomia do Phishing",
+            "teoria_desc": """O Phishing (Pescaria Digital) é a base de quase todos os ciberataques modernos. Os criminosos não perdem tempo tentando quebrar barreiras técnicas; eles falsificam e-mails, SMS (Smishing) e sites inteiros para manipular suas emoções.
+
+**Como funciona na prática:**
+Eles exploram o medo (sua conta será bloqueada), a ganância (você ganhou um prêmio) ou a curiosidade. A isca é sempre acompanhada de um gatilho de **Urgência**. O objetivo é fazer você agir por impulso, sem pensar.
+
+**Ameaças Silenciosas:**
+Hoje, você não precisa sequer digitar sua senha para ser hackeado. Apenas clicar em um link malicioso pode executar scripts ocultos no seu navegador, roubando "cookies" de sessão ou instalando softwares espiões.
+
+**Táticas de Defesa:**
+* **Desconfie do remetente:** Um e-mail 'suporte-banco@gmail.com' nunca é oficial.
+* **Passe o mouse antes de clicar:** Em computadores, passe o mouse sobre o link para ver o destino real no canto inferior da tela.
+* **Quebre o ciclo de urgência:** Recebeu um alerta assustador? Feche a mensagem e abra o aplicativo oficial do banco por conta própria.""",
             "desafios": [
                 {
                     "contexto": "FASE 1 (FÁCIL): Você recebe um SMS genérico.",
@@ -66,8 +77,19 @@ def main(page: ft.Page):
         },
         {
             "id": 2, "nome": "Módulo 2: Senhas", "icone": ft.icons.PASSWORD,
-            "teoria_titulo": "O Mito da Senha Forte",
-            "teoria_desc": "Hackers usam máquinas que testam bilhões de senhas por segundo. O tamanho da senha importa muito mais do que usar caracteres especiais no lugar das letras.",
+            "teoria_titulo": "Força Bruta e Vazamentos",
+            "teoria_desc": """A senha é a fechadura da sua vida digital. O maior erro da atualidade não é apenas usar senhas fracas, mas sim a **reutilização de senhas** (técnica de Credential Stuffing).
+
+**O Efeito Dominó:**
+Se você usa a mesma senha no banco e em um fórum pequeno, no momento em que o fórum for invadido, os hackers pegam sua senha e a testam automaticamente nas plataformas bancárias. Se a chave for a mesma, a porta abre.
+
+**O Mito da Complexidade:**
+Muitos acreditam que trocar letras por símbolos (ex: 'Mudar@123') cria uma senha forte. Isso é um mito. Robôs de **Força Bruta** testam bilhões de combinações por segundo e já conhecem essas substituições. O que realmente blinda uma senha é o seu TAMANHO.
+
+**Como se Proteger:**
+* **Frases-Senha (Passphrases):** Crie senhas baseadas em frases longas e fáceis de lembrar (ex: 'O_Pinguim_Danca_Samba_2024!'). Matematicamente, levaria trilhões de anos para serem quebradas.
+* **Autenticação em 2 Fatores (MFA):** Ative essa barreira extra. Mesmo se o hacker descobrir a senha, ele não terá o código temporal do seu celular.
+* **Cofres de Senha:** Use aplicativos gerenciadores (como Bitwarden ou o próprio Google Password Manager) para gerar senhas aleatórias e diferentes para cada site.""",
             "desafios": [
                 {
                     "contexto": "FASE 1 (FÁCIL): Criando senha do e-mail.",
@@ -109,8 +131,19 @@ def main(page: ft.Page):
         },
         {
             "id": 3, "nome": "Módulo 3: Clonagem", "icone": ft.icons.PEOPLE_ALT,
-            "teoria_titulo": "Golpes de Perfil Falso",
-            "teoria_desc": "Com uma simples foto sua da internet, golpistas chamam seus parentes usando um chip novo. Hoje, a IA já permite até clonar áudios perfeitamente usando vídeos antigos.",
+            "teoria_titulo": "Golpes de Perfil Falso e IA",
+            "teoria_desc": """O crime de falsidade ideológica digital raramente envolve "hackear" o aplicativo. O formato mais comum e lucrativo no Brasil explora unicamente a confiança.
+
+**A Engenharia do Golpe:**
+O estelionatário captura sua foto (disponível publicamente nas redes), adquire um chip novo e contata sua família. A narrativa inicial é sempre de isolamento: "Meu celular quebrou", "Fui assaltado". Uma vez estabelecida a desculpa para o número novo, surge a urgência financeira pedindo um Pix.
+
+**Ameaças Geradas por IA (Deepfakes):**
+A antiga dica de "pedir um áudio para confirmar" já não é segura. Com softwares de Inteligência Artificial gratuitos e vídeos que você posta nos seus stories, golpistas conseguem clonar o seu timbre de voz com perfeição, gerando áudios falsos em tempo real.
+
+**Protocolos de Resposta a Incidentes:**
+* **Desconfiança Imediata:** Todo pedido de dinheiro via mensagem, vindo de números desconhecidos, deve ser tratado como fraude.
+* **Quebra de Comunicação:** A única forma de garantir a verdade é quebrar o ciclo. Lige imediatamente para o número antigo (original) da pessoa ou exija uma chamada de vídeo ao vivo.
+* **Prevenção Ativa:** Oculte sua foto de perfil do WhatsApp para 'Apenas Contatos' e ative o PIN (Confirmação em Duas Etapas) para evitar que a sua conta real seja roubada.""",
             "desafios": [
                 {
                     "contexto": "FASE 1 (FÁCIL): Número novo com foto do seu filho.",
@@ -152,8 +185,15 @@ def main(page: ft.Page):
         },
         {
             "id": 4, "nome": "Módulo 4: Pirataria", "icone": ft.icons.DOWNLOAD,
-            "teoria_titulo": "A Ilusão do Grátis",
-            "teoria_desc": "O produto não é de graça; o produto é o acesso aos seus dados. Sites piratas e cracks de jogos sobrevivem infectando máquinas com malwares silenciosos.",
+            "teoria_titulo": "A Indústria do Malware",
+            "teoria_desc": """Na internet, quando você não paga por um produto, o produto é você. O vasto ecossistema de sites de filmes gratuitos, jogos "crackeados" e ativadores de sistemas operacionais é financiado inteiramente pela distribuição massiva de malwares.
+
+**Cavalos de Tróia e Ransomwares:**
+Ao tentar instalar um jogo pirata, as instruções frequentemente pedem para que você desative o seu antivírus. Ao fazer isso, o programa executa silenciosamente um Cavalo de Tróia. Ele pode ser um espião que monitora as teclas que você digita (Keylogger), um minerador oculto que destrói sua placa de vídeo, ou o temido Ransomware.
+O Ransomware sequestra a sua máquina, criptografa fotos e documentos essenciais e exige o pagamento de um resgate em Bitcoin. Mesmo pagando, não há garantia de devolução.
+
+**Streaming Ilegal e Drive-by Downloads:**
+Você acha que está seguro apenas assistindo filmes online sem baixar nada? Sites de pirataria estão infestados de anúncios maliciosos e scripts embutidos na própria página (Drive-by Download). Um simples clique na tela de reprodução pode forçar o seu navegador a baixar e executar extensões comprometedoras de forma autônoma. O "grátis" é a isca mais cara da internet.""",
             "desafios": [
                 {
                     "contexto": "FASE 1 (FÁCIL): Assistir a um filme de graça.",
@@ -329,14 +369,35 @@ def main(page: ft.Page):
         page.update()
 
     def abrir_teoria(dados):
-        page.views.append(ft.View(route="/leitura", padding=0, controls=[ft.Container(bgcolor="black", expand=True, padding=30, content=ft.Column([ft.Icon(dados["icone"], size=50, color="blue"), ft.Text(dados["teoria_titulo"], size=26, weight="bold", color="white", text_align="center"), ft.Container(height=15), ft.Text(dados["teoria_desc"], size=16, color="white", text_align="justify"), ft.Container(height=30), ft.TextButton("Voltar à Biblioteca", icon=ft.icons.ARROW_BACK, on_click=abrir_menu_teoria)], horizontal_alignment=ft.CrossAxisAlignment.CENTER))]))
+        page.views.append(
+            ft.View(
+                route="/leitura", padding=0,
+                controls=[
+                    ft.Container(
+                        bgcolor="black", expand=True, padding=30,
+                        content=ft.Column(
+                            controls=[
+                                ft.Icon(dados["icone"], size=50, color="blue"),
+                                ft.Text(dados["teoria_titulo"], size=26, weight="bold", color="white", text_align="center"),
+                                ft.Container(height=15),
+                                # Alterado para Markdown para renderizar negritos de forma elegante
+                                ft.Markdown(dados["teoria_desc"], selectable=True, extension_set=ft.MarkdownExtensionSet.GITHUB_WEB),
+                                ft.Container(height=30),
+                                ft.TextButton("Voltar à Biblioteca", icon=ft.icons.ARROW_BACK, on_click=abrir_menu_teoria)
+                            ],
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                            scroll=ft.ScrollMode.AUTO # Adicionado scroll para evitar cortes em textos longos
+                        )
+                    )
+                ]
+            )
+        )
         page.update()
 
     def abrir_perfil(e):
         page.views.append(ft.View(route="/perfil", padding=0, controls=[ft.Container(bgcolor="black", expand=True, padding=30, content=ft.Column([ft.Icon(ft.icons.PERSON_PIN, size=70, color="green"), ft.Text("Perfil do Agente", size=26, weight="bold", color="white"), ft.Text(f"Nome: {estado_jogo['usuario']}", size=18, color="white70"), ft.Container(height=30), ft.Text("Saúde do Dispositivo:", size=16, color="white"), criar_barra_hp(), ft.Container(height=20), ft.Text(f"Módulos Liberados: {estado_jogo['modulos_liberados']} / 4", size=16, color="white", weight="bold"), ft.Container(height=40), ft.TextButton("Voltar ao Menu", icon=ft.icons.ARROW_BACK, on_click=abrir_menu)], horizontal_alignment=ft.CrossAxisAlignment.CENTER, alignment=ft.MainAxisAlignment.CENTER))]))
         page.update()
 
-    # --- TELA EDUCATIVA DE GAME OVER ---
     def abrir_game_over(e=None):
         page.views.clear()
         page.views.append(
@@ -375,7 +436,7 @@ def main(page: ft.Page):
     def reiniciar_jogo(e):
         estado_jogo["hp"] = 100
         estado_jogo["modulos_liberados"] = 1
-        abrir_menu() # Volta pro menu sem precisar digitar o login de novo
+        abrir_menu()
 
     def abrir_simulacao(dados_modulo, fase_atual=0):
         fase_dados = dados_modulo["desafios"][fase_atual]
@@ -404,7 +465,6 @@ def main(page: ft.Page):
             estado_jogo["hp"] = max(0, estado_jogo["hp"] - dano)
             barra_atualizada.content = criar_barra_hp()
             
-            # ATIVA A TELA DE GAME OVER SE A VIDA ZERAR
             if estado_jogo["hp"] == 0:
                 container_feedback.controls.append(ft.Text("SISTEMA CORROMPIDO!", size=18, color="red", weight="bold"))
                 camada_animada.bgcolor = ft.colors.with_opacity(0.95, "red")
